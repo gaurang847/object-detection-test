@@ -8,6 +8,7 @@ const spawn = require('child_process').spawn;
 const PYTHON_SCRIPT_PATH = path.join(__dirname, '..', 'ml', 'script.py');
 const FRONT_PATH = path.join(__dirname, '..', 'front');
 const FRONT_INDEX_PATH = path.join(FRONT_PATH, 'upload.html');
+const UPLOAD_FORM_FIELD_NAME = 'the_image';
 
 express()
     .use(express.static(FRONT_PATH))
@@ -23,13 +24,19 @@ express()
     })
     .post('/upload', function(req, res){
         try{
-            console.log(JSON.stringify(req.files))
+            let filename = path.basename(req.files[UPLOAD_FORM_FIELD_NAME].path);
+            let process = spawn('python3', [PYTHON_SCRIPT_PATH, '--image', filename]);
 
-            spawn('python3', [PYTHON_SCRIPT_PATH, 'First', 'Last'])
-                .stdout.on('data', data => {
-                    console.log(data.toString())
-                    res.send(data.toString())
-                })
+            process.stdout.on('data', data => {
+                console.log(JSON.parse(data.toString()));
+                res.send(data.toString())
+            })
+
+            process.stderr.on('data', data => {
+                console.log(data.toString());
+                res.statusCode = 500;
+                res.send("Failure" + data.toString())
+            });
 
             //res.send(req.files);
         }catch(err){res.send(err)}

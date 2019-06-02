@@ -1,5 +1,8 @@
 ## CUSTOM
 uploads
+output
+.vscode
+ml/yolo-coco
 
 ## PYTHON 
 
