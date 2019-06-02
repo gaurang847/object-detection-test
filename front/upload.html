@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Object Detection Test</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <!--Style from https://codepen.io/atakan/pen/gqbIz-->
-        <form id="msform" action="/upload" method="post" enctype="multipart/form-data">
-    
-            <fieldset>
-                <label for="avatar">Upload file for object detection:</label>
-		        <br><br>
 
-                <input type="file"
-                        id="avatar" name="avatar"
-                        accept="image/png, image/jpeg">
-                    
-                <button type="submit">Submit</button>
-            </fieldset>
-            
-        </form>
-    </body>
+<head>
+    <title>Object Detection Test</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Style from https://codepen.io/atakan/pen/gqbIz-->
+    <form id="msform" action="/upload" method="post" enctype="multipart/form-data">
+
+        <fieldset>
+            <label>Upload file for object detection:</label>
+            <br><br>
+
+            <input name="the_image" type="file" accept="image/png, image/jpeg">
+
+            <button type="submit">Submit</button>
+        </fieldset>
+
+    </form>
+</body>
+
 </html>
