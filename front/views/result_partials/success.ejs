@@ -1,0 +1,27 @@
+<label><b>Resolution:</b> (<%= data.resolution.width %> x <%= data.resolution.height %>)</label>
+<br>
+<br>
+<label><b>File type:</b> <%= data.meta.filetype %></label>
+<br>
+<br>
+<label><b>File size:</b> <%= data.meta.sizeInBytes %> bytes</label>
+<br>
+<br>
+<hr>
+<br>
+<label><b>Objects detected:</b></label>
+<br><br>
+<img src=<%= data.meta.filename %>>
+<br><br>
+<table>
+<tr>
+    <th>Object</th>
+    <th>Confidence</th>
+</tr>
+<% for(let i=0; i< data.detection.length; i++){ %>
+<tr>
+    <td><%= data.detection[i].class %></td>
+    <td><%= data.detection[i].confidence.toFixed(5) %></td>
+</tr>
+<% } %>
+</table>
