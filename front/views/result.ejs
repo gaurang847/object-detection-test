@@ -6,18 +6,16 @@
 </head>
 <body>
     <!--Style from https://codepen.io/atakan/pen/gqbIz-->
-    <form >
+    <form id="msform">
 
         <fieldset>
-            <label>Result</label>
-            <label>
-            <%- data.success ? 'Success': 'Failure' %>
-            </label>
-            <br><br>
-
-            <% if(data.success){ %>
+            <% if(data.meta.success){ %>
+                <h2>Success</h2>
+                <br><br>
                 <%- include('result_partials/success', {data}) %>
             <% }else { %>
+                <h2>Failure</h2>
+                <br><br>
                 <%- include('result_partials/failed', {data}) %>
             <% } %>
         </fieldset>
