@@ -1,3 +1,9 @@
+## CUSTOM
+uploads
+output
+.vscode
+ml/yolo-coco
+
 ## PYTHON 
 
 # Byte-compiled / optimized / DLL files

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object Detection Test</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!--Style from https://codepen.io/atakan/pen/gqbIz-->
+    <form id="msform">
+
+        <fieldset>
+            <% if(data.meta.success){ %>
+                <h2>Success</h2>
+                <br><br>
+                <%- include('result_partials/success', {data}) %>
+            <% }else { %>
+                <h2>Failure</h2>
+                <br><br>
+                <%- include('result_partials/failed', {data}) %>
+            <% } %>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

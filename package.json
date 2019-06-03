@@ -1,0 +1,28 @@
+{
+  "name": "object-detection-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "back/index.js",
+  "dependencies": {
+    "chart.js": "^2.8.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0"
+  },
+  "devDependencies": {
+    "ejs-lint": "^0.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masquerade817/object-detection-test.git"
+  },
+  "author": "Gaurang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masquerade817/object-detection-test/issues"
+  },
+  "homepage": "https://github.com/masquerade817/object-detection-test#readme"
+}
