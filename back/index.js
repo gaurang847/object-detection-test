@@ -12,6 +12,8 @@ const UPLOAD_FORM_FIELD_NAME = 'the_image';
 
 express()
     .use(express.static(FRONT_PATH))
+    .set('views', path.join(FRONT_PATH, 'views'))
+    .set('view engine', 'ejs')
     .use(formidableMiddleware({
         uploadDir: 'uploads',
         keepExtensions: true,
@@ -29,13 +31,14 @@ express()
 
             process.stdout.on('data', data => {
                 console.log(JSON.parse(data.toString()));
-                res.send(data.toString())
+                data.success = true;
+                res.render('result', {data})
             })
 
             process.stderr.on('data', data => {
                 console.log(data.toString());
                 res.statusCode = 500;
-                res.send("Failure" + data.toString())
+                res.render('result', {data})
             });
 
             //res.send(req.files);

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object Detection Test</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!--Style from https://codepen.io/atakan/pen/gqbIz-->
+    <form >
+
+        <fieldset>
+            <label>Result</label>
+            <label>
+            <%- data.success ? 'Success': 'Failure' %>
+            </label>
+            <br><br>
+
+            <% if(data.success){ %>
+                <%- include('result_partials/success', {data}) %>
+            <% }else { %>
+                <%- include('result_partials/failed', {data}) %>
+            <% } %>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

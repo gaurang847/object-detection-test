@@ -123,7 +123,7 @@ if len(idxs) > 0:
 		cv2.putText(image, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX,
 			0.5, color, 2)
 
-		RESPONSE['detection'].append({'class': LABELS[classIDs[i]], 'confidence': confidences[i]})
+		RESPONSE['detection'].append({'class': LABELS[classIDs[i]], 'confidence': confidences[i], 'color': color})
 
 # output image
 cv2.imwrite(os.path.sep.join([OUTPUT_DIR, args['image']]), image)
