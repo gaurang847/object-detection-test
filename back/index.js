@@ -39,8 +39,8 @@ express()
 
             process.stdout.on('data', data => {
                 let newData = JSON.parse(data.toString());
+                newData.success = true;
                 newData.meta = {
-                    "success": true,
                     "filetype": req.files[UPLOAD_FORM_FIELD_NAME].type,
                     "sizeInBytes": req.files[UPLOAD_FORM_FIELD_NAME].size,
                     "filename": filename
@@ -51,7 +51,8 @@ express()
             })
 
             process.stderr.on('data', data => {
-                let message = {'message': 'Yolo script error'};
+                console.error(data.toString())
+                let message = {'message': 'Yolo script error', 'success': false};
                 res.render('result', {data: message});
             });
 
