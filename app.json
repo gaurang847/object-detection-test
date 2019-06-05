@@ -1,0 +1,22 @@
+{
+    "name": "Object Detection Test",
+    "description": "Detects objects in a given image. Using YOLOv3 model pre-trained on Coco dataset",
+    "keywords": [
+        "object-detection",
+        "opencv",
+        "yolov3"
+    ],
+    "website": "https://object-detection-test.herokuapp.com",
+    "repository": "https://github.com/masquerade817/object-detection-test",
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "heroku-community/apt"
+        }
+    ]
+}
