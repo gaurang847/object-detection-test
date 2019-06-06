@@ -20,7 +20,14 @@ express()
         uploadDir: 'uploads',
         keepExtensions: true,
         maxFileSize: 5 * 1024 * 1024        //5 MB = 5 * 1024 * 1024 Bytes
-    }))
+    }, [{
+        event: 'error',
+        action: function (req, res, next, name, file) {
+            console.error({name, file});
+            let message = {'message': 'File Upload Error', 'success': false};
+            res.render('result', {data: message});
+        }
+    }]))
     .get('/', function(req, res){
         try{
             res.sendFile(FRONT_INDEX_PATH);
