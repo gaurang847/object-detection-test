@@ -4,7 +4,7 @@
   "description": "",
   "main": "back/index.js",
   "dependencies": {
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0"
