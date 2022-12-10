@@ -6,7 +6,7 @@
   "dependencies": {
     "chart.js": "^2.8.0",
     "ejs": "^2.6.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-formidable": "^1.2.0"
   },
   "devDependencies": {
